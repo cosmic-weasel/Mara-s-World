@@ -1,0 +1,31 @@
+using System;
+
+namespace YarismaProblem
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double ilkYarismaciHiz = 15;  // km/saat
+            double ikinciYarismaciHiz = 20;  // km/saat
+
+            double yakalamaZamani = YakalamaZamaniHesapla(ilkYarismaciHiz, ikinciYarismaciHiz);
+            Console.WriteLine($"İkinci yarışmacı ilk yarışmacıyı {yakalamaZamani:F2} saat sonra yakalar.");
+        }
+
+        static double YakalamaZamaniHesapla(double ilkHiz, double ikinciHiz)
+        {
+            // İki yarışmacı arasındaki hız farkını hesaplayalım.
+            double hizFarki = ikinciHiz - ilkHiz;
+
+            // İlk yarışmacıyı yakalama zamanını hesaplayalım.
+            double yakalamaZamani = 0;
+            if (hizFarki > 0)
+            {
+                yakalamaZamani = ilkHiz / hizFarki;
+            }
+
+            return yakalamaZamani;
+        }
+    }
+}
